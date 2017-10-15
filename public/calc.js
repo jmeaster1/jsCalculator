@@ -36,6 +36,9 @@ $(document).keydown(function(e) {
     currentDisplay += " √ ";
     $('#display').text(currentDisplay);
   }
+  if (key == "o") {
+    $('#display').css('background-color', '#c3d941');
+  }
   if (key == "=" || e.keyCode == "13") {
     var currentDisplay = $('#display').text();
     var array = currentDisplay.split(" ");

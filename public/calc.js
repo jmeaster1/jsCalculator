@@ -1,3 +1,77 @@
+$(document).keydown(function(e) {
+  var key = e.key;
+  console.log(key);
+  for (var i = 0; i < 10; i++) {
+    if (key == i) {
+      var currentDisplay = $('#display').text();
+      currentDisplay += "" + i;
+      $('#display').text(currentDisplay);
+    }
+  }
+  if (key == "c") {
+  $('#display').text("");
+  }
+  if (key == "+") {
+    var currentDisplay = $('#display').text();
+    currentDisplay += " + ";
+    $('#display').text(currentDisplay);
+  }
+  if (key == "*") {
+    var currentDisplay = $('#display').text();
+    currentDisplay += " * ";
+    $('#display').text(currentDisplay);
+  }
+  if (key == "-") {
+    var currentDisplay = $('#display').text();
+    currentDisplay += " - ";
+    $('#display').text(currentDisplay);
+  }
+  if (key == "/") {
+    var currentDisplay = $('#display').text();
+    currentDisplay += " / ";
+    $('#display').text(currentDisplay);
+  }
+  if (key == "√") {
+    var currentDisplay = $('#display').text();
+    currentDisplay += " √ ";
+    $('#display').text(currentDisplay);
+  }
+  if (key == "=" || e.keyCode == "13") {
+    var currentDisplay = $('#display').text();
+    var array = currentDisplay.split(" ");
+    if (array[1] == "+") {
+      $('#display').text(Number(array[0]) + Number(array[2]));
+    }
+    if (array[1] == "-") {
+      $('#display').text(Number(array[0]) - Number(array[2]));
+    }
+    if (array[1] == "*") {
+      $('#display').text(Number(array[0]) * Number(array[2]));
+    }
+    if (array[1] == "/") {
+      $('#display').text(Number(array[0]) / Number(array[2]));
+    }
+    if (array[1] == "√") {
+      $('#display').text(Math.sqrt(parseFloat(arr[0])));
+    }
+  }
+
+  // case '√': $('#display').text(Math.sqrt(parseFloat(arr[0])));
+
+
+  if (key == ".") {
+    var currentDisplay = $('#display').text();
+    currentDisplay += ".";
+    $('#display').text(currentDisplay);
+  }
+});
+
+
+
+
+
+
+
 $('#clear').click(function(e) {
   $('#display').text("");
 });
@@ -129,6 +203,8 @@ $('#equals').click(function(e){
   $('#powerOn').click(function(e){
     $('#display').css('background-color', '#c3d941');
   });
+
+
 
 //   $( '.number' ).mouseover(function() {
 //   $('.number').css('background-color', 'white');
